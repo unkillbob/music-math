@@ -1,0 +1,38 @@
+{
+  "name": "music-math",
+  "version": "0.0.0",
+  "description": "",
+  "license": "MIT",
+  "repository": "unkillbob/music-math",
+  "author": {
+    "name": "James Bunt",
+    "email": "james.bunt@vendhq.com",
+    "url": "github.com/unkillbob"
+  },
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "babel src -d dist",
+    "post-build": "onchange 'dist/**.js' 'test/**.js' -- npm test",
+    "watch": "npm run build -- -w & npm run post-build",
+    "test": "standard && mocha --compilers js:babel/register",
+    "prepublish": "npm run build && npm test"
+  },
+  "keywords": [
+    ""
+  ],
+  "dependencies": {},
+  "devDependencies": {
+    "babel": "*",
+    "chai": "^2.3.0",
+    "mocha": "*",
+    "onchange": "1.x",
+    "standard": "*"
+  },
+  "standard": {
+    "ignore": [
+      "coverage/**",
+      "dist/**",
+      "node_modules/**"
+    ]
+  }
+}
