@@ -76,6 +76,16 @@ The measure of how off pitch the frequency is from the closest matching note (in
 
 ## Contributing
 
+### Help Wanted!
+
+This utility was pulled out of a little fun side project I was working on - I am by no means versed in musical theory. I would be immensely grateful of any help especially in the form of:
+
+- corrections to my terminology
+- corrections to the math
+- additional test cases (especially failing ones that reveal flaws in my math!)
+
+All pull requests / issues / feedback welcome :) Thanks!
+
 ### Build
 
 ```js
