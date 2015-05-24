@@ -1,7 +1,7 @@
 {
   "name": "music-math",
   "version": "0.0.0",
-  "description": "",
+  "description": "A utility library for calculating musical information e.g. a note from a frequency",
   "license": "MIT",
   "repository": "unkillbob/music-math",
   "author": {

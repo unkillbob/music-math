@@ -10,6 +10,10 @@
 [standard-style-image]: https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat
 [standard-style-url]: https://github.com/feross/standard
 
+> A utility library for calculating musical information e.g. a note from a frequency
+
+![math](http://media1.giphy.com/media/i58xhIseqtRpC/giphy.gif)
+
 ## Install
 
 ```
@@ -19,31 +23,56 @@ $ npm install --save music-math
 ## Usage
 
 ```js
-var musicMath = require('music-math');
+var Frequency = require('music-math').Frequency;
 
-musicMath('unicorns');
-//=> unicorns & rainbows
+var freqDetails = Frequency(440)
+
+console.log(JSON.stringify(freqDetails))
+//=> {"frequency":440,"noteNumber":57,"note":"A","octave":4,"offset":0}
 ```
 
 ## API
 
-### musicMath(input, [options])
+### Frequency(frequency)
 
-#### input
+#### frequency
 
 - *Required*
+- Type: `number`
+
+The frequency to perform calculations on (in Hz).
+
+Returns an object with the following properties (lazily calculated first time you request them):
+
+##### frequency
+
+- Type: `number`
+
+The frequency of the note (in Hz)
+
+##### noteNumber
+
+- Type: `number`
+
+The number of the [closest matching] note in the scale
+
+##### note
+
 - Type: `string`
 
-Lorem ipsum.
+The [closest matching] note in the scale
 
-#### options
+##### octave
 
-##### foo
+- Type: `number`
 
-- Type: `boolean`  
-- Default: `false`
+The octave the frequency resides in
 
-Lorem ipsum.
+##### offset
+
+- Type: `number`
+
+The measure of how off pitch the frequency is from the closest matching note (in cents)
 
 ## Contributing
 
